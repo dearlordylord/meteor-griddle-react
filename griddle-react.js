@@ -407,7 +407,7 @@
               data = _.first(data, (currentPage + 1) * this.props.resultsPerPage);
             } else {
               //the 'rest' is grabbing the whole array from index on and the 'initial' is getting the first n results
-              var rest = _.rest(data, currentPage * this.props.resultsPerPage);
+              var rest = _.drop(data, currentPage * this.props.resultsPerPage); // https://github.com/DynamicTyped/Griddle/issues/120
               data = _.initial(rest, rest.length - this.props.resultsPerPage);
             }
           }
@@ -635,7 +635,7 @@
         },
         render: function () {
           var that = this,
-            results = this.getCurrentResults(); // Attempt to assign to the filtered results, if we have any.
+            results = this.getCurrentResults(); // Attempt to assign to the filtered results, if we have any.\
 
           var headerTableClassName = this.props.tableClassName + " table-header";
 

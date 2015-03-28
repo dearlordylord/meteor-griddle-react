@@ -1,8 +1,8 @@
 Package.describe({
   name: 'firfi:griddle-react',
-  version: '0.0.1',
+  version: '0.0.2',
   // Brief, one-line summary of the package.
-  summary: '',
+  summary: 'ReactJS Griddle port for Meteor',
   // URL to the Git repository containing the source code for this package.
   git: 'https://github.com/Firfi/meteor-griddle-react',
   // By default, Meteor will default to using README.md for documentation.
@@ -12,7 +12,7 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.0.5');
-  api.use('reactjs:react', 'client');
+  api.use('reactjs:react@0.2.1', 'client');
   api.addFiles('griddle-react.js', 'client');
   // api.export(['Griddle'], 'client'); it exports undefined
 });
